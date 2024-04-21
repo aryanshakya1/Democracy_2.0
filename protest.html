@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+#protest-section {
+  width: 80%;
+  margin: 30px auto;
+  text-align: center;
+}
+
+#protest-section h1 {
+  color: #333;
+}
+
+#create-protest-btn {
+  background-color: #008CBA;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#protest-form input,
+#protest-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+#submit-protest {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  #protest-section {
+    width: 95%;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div id="protest-section">
+        <h1>Voice Your Protest</h1>
+        <button id="create-protest-btn">Create a Protest</button>
+        <div id="protest-form" style="display:none;">
+          <input type="text" id="protest-title" placeholder="Title of the Protest" required>
+          <textarea id="protest-description" placeholder="Description" required></textarea>
+          <input type="date" id="protest-date" placeholder="Date" required>
+          <input type="text" id="protest-location" placeholder="Location" required>
+          <button id="submit-protest">Submit Protest</button>
+        </div>
+      </div>
+      
+    <script>
+        document.getElementById('create-protest-btn').addEventListener('click', function() {
+  document.getElementById('protest-form').style.display = 'block';
+});
+
+document.getElementById('submit-protest').addEventListener('click', function(e) {
+  e.preventDefault();
+  // Here you would handle the form submission, e.g., send data to a server or store it locally
+  alert('Protest submitted!');
+});
+
+    </script>
+</body>
+</html>
